@@ -29,7 +29,7 @@ contract Arduino{
     function newCustomer(address newUsers) public OnlyOwner{
         new NewCustomer(newUsers);
         userList.push(Users(new NewCustomer(newUsers),newUsers));
-        MappingUser[newUsers]= address(new NewCustomer(newUsers));
+        MappingUser[newUsers]= address(new NewCustomer(newUsers))
     }
 
     modifier OnlyOwner(){
