@@ -18,6 +18,7 @@ contract NewCustomer{
     struct SensorData{
         uint256 sensorValue;
     }
+    mapping(uint256=>uint256) public timeStamp;
 
     SensorData[] public Data;
 
@@ -27,6 +28,7 @@ contract NewCustomer{
 
     function StoreData(uint256 value)  OnlyOwner public{
         Data.push(SensorData(value));
+        timeStamp[block.timestamp]=value;
         if(value<55){
            HeartBeat=Sensing.Low;
         }
