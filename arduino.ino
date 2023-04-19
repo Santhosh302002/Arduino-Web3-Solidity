@@ -63,7 +63,7 @@ void eth_send_example()
     uint8_t dataStr[100];
     memset(dataStr, 0, 100);
     string func = "StoreData(uint256)";
-    string p = contract.SetupContractData(&func, 123);
+    string p = contract.SetupContractData(&func, 123); // get value form sensor and store it
     string result = contract.SendTransaction(nonceVal, gasPriceVal, gasLimitVal, &toStr, &valueStr, &p);
 
     USE_SERIAL.println(result);
